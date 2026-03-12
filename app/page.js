@@ -1,9 +1,7 @@
 import { supabase } from '../utils/supabase';
 import '../components/button.css';
-import dev from '../assets/dev.png';
-import avatar from '../assets/avatar.png';
 import Navbar from '../components/Navbar';
-import ProfileCard from '../components/ProfileCard';
+import HeroProfileCard from '../components/HeroProfileCard';
 import FAQAccordion from '../components/FAQAccordion';
 import { FadeInLeft, FadeInRight, FadeInDown, FadeInUpScroll, FadeInLeftScroll, FadeInRightScroll } from '../components/HeroAnimations';
 import { AnimatedThemeToggler } from '../components/ui/animated-theme-toggler';
@@ -43,21 +41,7 @@ export default async function LandingPage() {
           
           <div className="hero-grid">
             <FadeInLeft>
-              <ProfileCard
-                name="Desarrollador Full Stack"
-                title=""
-                handle="josuemedev"
-                status="Disponible"
-                contactText="Contacto"
-                avatarUrl={avatar.src}
-                showUserInfo={true}
-                enableTilt={true}
-                enableMobileTilt={false}
-                behindGlowColor="rgba(125, 190, 255, 0.67)"
-                iconUrl={dev.src}
-                behindGlowEnabled
-                innerGradient="linear-gradient(145deg,#60496e8c 0%,#71C4FF44 100%)"
-              />
+              <HeroProfileCard />
             </FadeInLeft>
             
             <FadeInRight className="hero-details">
@@ -66,10 +50,10 @@ export default async function LandingPage() {
                 <br />
                 La creé con el objetivo de ayudar a negocios a construir una presencia digital sólida, moderna y enfocada en resultados.              </p>
               
-              <a href="#projects" style={{ textDecoration: 'none' }}>
+              <a href="/CV - Josue Mejia.pdf" download="CV - Josue Mejia.pdf" style={{ textDecoration: 'none' }}>
                 <button className="btn-31">
                   <span className="text-container">
-                    <span className="text">Ver proyectos</span>
+                    <span className="text">Descargar CV</span>
                   </span>
                 </button>
               </a>
