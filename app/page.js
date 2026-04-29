@@ -1,11 +1,9 @@
-import { supabase } from '../utils/supabase';
 import '../components/button.css';
 import Navbar from '../components/Navbar';
-import HeroProfileCard from '../components/HeroProfileCard';
 import FAQAccordion from '../components/FAQAccordion';
 import { FadeInLeft, FadeInRight, FadeInDown, FadeInUpScroll, FadeInLeftScroll, FadeInRightScroll } from '../components/HeroAnimations';
-import { AnimatedThemeToggler } from '../components/ui/animated-theme-toggler';
 import LogoLoop from '../components/LogoLoop';
+import MagicRings from '../components/MagicRings';
 import { SiReact, SiNextdotjs, SiTypescript, SiTailwindcss, SiNodedotjs, SiPython, SiPostgresql, SiFirebase } from 'react-icons/si';
 
 const techLogos = [
@@ -23,10 +21,35 @@ const techLogos = [
 export const revalidate = 0; // Ensures fresh data for MVP
 
 export default async function LandingPage() {
-  const { data: projects } = await supabase.from('projects').select('*').order('created_at', { ascending: false }).limit(6);
+  const projects = [
+    {
+      id: 1,
+      title: 'Sistema de Ventas',
+      description: 'Plataforma web para gestión de ventas, inventario y reportes detallados.',
+      image_url: null,
+      demo_url: '#',
+      created_at: new Date().toISOString()
+    },
+    {
+      id: 2,
+      title: 'App Móvil PoliRed',
+      description: 'Aplicación nativa para la red de comercios locales con geolocalización.',
+      image_url: null,
+      demo_url: '#',
+      created_at: new Date().toISOString()
+    },
+    {
+      id: 3,
+      title: 'E-commerce Premium',
+      description: 'Tienda en línea de alto rendimiento con pasarela de pagos integrada.',
+      image_url: null,
+      demo_url: '#',
+      created_at: new Date().toISOString()
+    }
+  ];
   
-  const leftProjects = projects?.filter((_, i) => i % 2 === 0) || [];
-  const rightProjects = projects?.filter((_, i) => i % 2 === 1) || [];
+  const leftProjects = projects.filter((_, i) => i % 2 === 0);
+  const rightProjects = projects.filter((_, i) => i % 2 === 1);
 
   return (
     <>
@@ -34,30 +57,65 @@ export default async function LandingPage() {
 
       <main>
         {/* Hero Section */}
-        <section className="container animate-fade-up hero-section-padding">
-          <h1 style={{ fontSize: 'clamp(3rem, 10vw, 8rem)', lineHeight: 0.9, fontWeight: 900, margin: '0 0 var(--spacing-16) 0', color: 'var(--color-text-main)', letterSpacing: '-0.04em', textTransform: 'uppercase', textAlign: 'inherit' }}>
-            Josué Mejía
-          </h1>
-          
-          <div className="hero-grid">
-            <FadeInLeft>
-              <HeroProfileCard />
-            </FadeInLeft>
+        <section style={{ position: 'relative', width: '100%', minHeight: '100vh', overflow: 'hidden' }}>
+          {/* Background Magic Rings */}
+          <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', zIndex: 0, opacity: 0.6, pointerEvents: 'none' }}>
+            <MagicRings
+              color="#ffffff"
+              colorTwo="#696a88"
+              ringCount={7}
+              speed={1}
+              attenuation={10}
+              lineThickness={2}
+              baseRadius={0.35}
+              radiusStep={0.1}
+              scaleRate={0.1}
+              opacity={1}
+              blur={0}
+              noiseAmount={0.1}
+              rotation={0}
+              ringGap={1.5}
+              fadeIn={0.7}
+              fadeOut={0.5}
+              followMouse={false}
+              mouseInfluence={0.2}
+              hoverScale={1.2}
+              parallax={0.05}
+              clickBurst={false}
+            />
+          </div>
+
+          <div className="container animate-fade-up" style={{ position: 'relative', zIndex: 1, width: '100%', minHeight: '100vh', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', padding: '6rem 1rem 4rem 1rem' }}>
             
-            <FadeInRight className="hero-details">
-              <p style={{ fontSize: 'clamp(1.125rem, 3vw, 1.5rem)', color: 'var(--color-text-muted)', lineHeight: 1.6, marginBottom: 'clamp(2rem, 10vw, 6rem)', maxWidth: '400px' }}>
-                Fundador de <span style={{ fontWeight: 'bold', color: 'var(--color-text-main)' }}>DE</span><span style={{ fontWeight: 'bold', color: '#4562b7ff' }}>V</span><span style={{ fontWeight: 'bold', color: 'var(--color-text-main)' }}>DN</span>, una empresa especializada en el desarrollo de landing pages, páginas institucionales y e-commerce. 
+            <FadeInRight className="hero-details" style={{ alignSelf: 'flex-start', textAlign: 'left', maxWidth: '550px' }}>
+              <p style={{ fontSize: 'clamp(1rem, 2vw, 1.2rem)', color: 'var(--color-text-muted)', lineHeight: 1.6, marginBottom: '2rem' }}>
+                Especializado en el desarrollo de landing pages, páginas institucionales y e-commerce. 
                 <br />
-                La creé con el objetivo de ayudar a negocios a construir una presencia digital sólida, moderna y enfocada en resultados.              </p>
+                Mi objetivo es ayudar a negocios a construir una presencia digital sólida, moderna y enfocada en resultados.
+              </p>
               
-              <a href="/CV - Josue Mejia.pdf" download="CV - Josue Mejia.pdf" style={{ textDecoration: 'none' }}>
-                <button className="btn-31">
-                  <span className="text-container">
-                    <span className="text">Descargar CV</span>
-                  </span>
-                </button>
-              </a>
+              <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+                <a href="/CV - Josue Mejia.pdf" download="CV - Josue Mejia.pdf" style={{ textDecoration: 'none' }}>
+                  <button className="btn-31" style={{ padding: '0.75rem 1.5rem', fontSize: '0.85rem' }}>
+                    <span className="text-container">
+                      <span className="text">Descargar CV</span>
+                    </span>
+                  </button>
+                </a>
+                <a href="#contact" style={{ textDecoration: 'none' }}>
+                  <button className="btn-31" style={{ padding: '0.75rem 1.5rem', fontSize: '0.85rem' }}>
+                    <span className="text-container">
+                      <span className="text">Vamos a hablar</span>
+                    </span>
+                  </button>
+                </a>
+              </div>
             </FadeInRight>
+
+            <h1 style={{ fontSize: 'clamp(3.5rem, 12vw, 10rem)', lineHeight: 0.9, fontWeight: 900, color: 'var(--color-text-main)', letterSpacing: '-0.04em', textTransform: 'uppercase', textAlign: 'center', margin: 0 }}>
+              Josué Mejía
+            </h1>
+            
           </div>
         </section>
 
@@ -222,7 +280,7 @@ export default async function LandingPage() {
                 const message = formData.get('message');
                 
                 if(name && email && message) {
-                  await supabase.from('contact_messages').insert([{ name, email, message }]);
+                  console.log('Nuevo mensaje de contacto local:', { name, email, message });
                 }
               }} style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
                 <div className="input-group">
@@ -271,7 +329,7 @@ export default async function LandingPage() {
           <FadeInUpScroll delay={0.1} className="footer-brand-col" style={{ display: 'flex', flexDirection: 'column', gap: '1rem', flex: '1 1 300px', alignItems: 'center', textAlign: 'center' }}>
             <FadeInDown delay={0.1} className="boldonse-regular logo-text" style={{ fontSize: 'clamp(3rem, 10vw, 5rem)', lineHeight: 1 }}>
               <a href="#" style={{ textDecoration: 'none', color: 'inherit', cursor: 'pointer' }}>
-                <span style={{ color: '#ffffffff' }}>DE</span><span style={{ color: '#4562b7ff' }}>V</span><span style={{ color: '#ffffffff' }}>DN</span>
+                Josué Mejía
               </a>
             </FadeInDown>
             
@@ -342,10 +400,7 @@ export default async function LandingPage() {
           </div>
         </FadeInUpScroll>
         
-        {/* Massive Background Text Effect */}
-        <div style={{ position: 'absolute', bottom: '-4rem', left: '0', width: '100%', pointerEvents: 'none', zIndex: 1, overflow: 'hidden' }}>
-          <h1 className="boldonse-regular" style={{ fontSize: '18vw', lineHeight: 0.8, color: 'rgba(255, 255, 255, 0.05)', margin: 0, textAlign: 'center', whiteSpace: 'nowrap', userSelect: 'none' }}>DEVDN</h1>
-        </div>
+        {/* Background removed */}
       </footer>
     </>
   );
