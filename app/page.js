@@ -4,6 +4,12 @@ import FAQAccordion from '../components/FAQAccordion';
 import { FadeInLeft, FadeInRight, FadeInDown, FadeInUpScroll, FadeInLeftScroll, FadeInRightScroll } from '../components/HeroAnimations';
 import LogoLoop from '../components/LogoLoop';
 import MagicRings from '../components/MagicRings';
+import HeroScrollText from '../components/HeroScrollText';
+import CurvedLoop from '../components/CurvedLoop';
+import OrbitImages from '../components/OrbitImages';
+import SobreMiSection from '../components/SobreMiSection';
+import ProyectosSection from '../components/ProyectosSection';
+import PinnedFAQFooter from '../components/PinnedFAQFooter';
 import { SiReact, SiNextdotjs, SiTypescript, SiTailwindcss, SiNodedotjs, SiPython, SiPostgresql, SiFirebase } from 'react-icons/si';
 
 const techLogos = [
@@ -24,10 +30,10 @@ export default async function LandingPage() {
   const projects = [
     {
       id: 1,
-      title: 'Sistema de Ventas',
-      description: 'Plataforma web para gestión de ventas, inventario y reportes detallados.',
+      title: 'Mejiabritoart website',
+      description: 'Sitio web para un artista plástico, con galería de obras y formulario de contacto.',
       image_url: null,
-      demo_url: '#',
+      demo_url: 'https://mejia-brito-art.vercel.app',
       created_at: new Date().toISOString()
     },
     {
@@ -40,10 +46,10 @@ export default async function LandingPage() {
     },
     {
       id: 3,
-      title: 'E-commerce Premium',
-      description: 'Tienda en línea de alto rendimiento con pasarela de pagos integrada.',
+      title: 'Fundacion DILO website',
+      description: 'Plataforma para la Fundación DILO, para Terapias Avanzadas para el Desarrollo.',
       image_url: null,
-      demo_url: '#',
+      demo_url: 'https://fundacion-dilo.vercel.app',
       created_at: new Date().toISOString()
     }
   ];
@@ -85,324 +91,231 @@ export default async function LandingPage() {
             />
           </div>
 
-          <div className="container animate-fade-up" style={{ position: 'relative', zIndex: 1, width: '100%', minHeight: '100vh', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', padding: '6rem 1rem 4rem 1rem' }}>
-            
-            <FadeInRight className="hero-details" style={{ alignSelf: 'flex-start', textAlign: 'left', maxWidth: '550px' }}>
-              <p style={{ fontSize: 'clamp(1rem, 2vw, 1.2rem)', color: 'var(--color-text-muted)', lineHeight: 1.6, marginBottom: '2rem' }}>
-                Especializado en el desarrollo de landing pages, páginas institucionales y e-commerce. 
-                <br />
-                Mi objetivo es ayudar a negocios a construir una presencia digital sólida, moderna y enfocada en resultados.
-              </p>
-              
-              <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
-                <a href="/CV - Josue Mejia.pdf" download="CV - Josue Mejia.pdf" style={{ textDecoration: 'none' }}>
-                  <button className="btn-31" style={{ padding: '0.75rem 1.5rem', fontSize: '0.85rem' }}>
-                    <span className="text-container">
-                      <span className="text">Descargar CV</span>
-                    </span>
-                  </button>
-                </a>
-                <a href="#contact" style={{ textDecoration: 'none' }}>
-                  <button className="btn-31" style={{ padding: '0.75rem 1.5rem', fontSize: '0.85rem' }}>
-                    <span className="text-container">
-                      <span className="text">Vamos a hablar</span>
-                    </span>
-                  </button>
-                </a>
-              </div>
-            </FadeInRight>
-
-            <h1 style={{ fontSize: 'clamp(3.5rem, 12vw, 10rem)', lineHeight: 0.9, fontWeight: 900, color: 'var(--color-text-main)', letterSpacing: '-0.04em', textTransform: 'uppercase', textAlign: 'center', margin: 0 }}>
-              Josué Mejía
+          <FadeInRight className="hero-details" style={{ position: 'absolute', top: 'clamp(2.5rem, 2vh, 40px)', left: 'clamp(1rem, 3vw, 40px)', zIndex: 10, textAlign: 'left', maxWidth: '650px' }}>
+            <h1 style={{ fontSize: 'clamp(1.5rem, 3vw, 2.5rem)', color: '#ffffff', lineHeight: 1.3, marginBottom: '0', fontWeight: 900, textTransform: 'uppercase', letterSpacing: '-0.02em', textShadow: '0px 4px 20px rgba(0,0,0,0.5)' }}>
+              Diseñador <span style={{ color: 'var(--color-text-muted)' }}>UX/UI</span> & <br />
+              Desarrollador <span style={{ color: 'var(--color-text-muted)' }}>Full Stack</span>
             </h1>
-            
+          </FadeInRight>
+
+          <div className="container animate-fade-up" style={{ position: 'relative', zIndex: 1, width: '100%', minHeight: '100vh', display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', padding: '3rem 1rem 4rem 1rem' }}>
+            <HeroScrollText />
           </div>
         </section>
 
-        {/* Sobre Mi Section */}
-        <section id="about" style={{ padding: 'clamp(4rem, 15vw, 6rem) 0' }}>
-          <FadeInUpScroll>
-            <div className="container" style={{ 
-              backgroundColor: '#1a1a1a', 
-              borderRadius: 'var(--radius-lg)', 
-              padding: 'clamp(4rem, 15vw, 6rem) var(--spacing-6)', 
-              display: 'flex', 
-              flexDirection: 'column', 
-              alignItems: 'center', 
-              justifyContent: 'center',
-              minHeight: '400px'
-            }}>
-              <FadeInUpScroll delay={0.2} style={{ textAlign: 'center', marginBottom: 'var(--spacing-8)' }}>
-                <h2 style={{ fontSize: 'clamp(3rem, 8vw, 6rem)', fontWeight: 900, color: '#ffffff', letterSpacing: '-0.04em', textTransform: 'uppercase', lineHeight: 1 }}>Sobre Mí</h2>
-              </FadeInUpScroll>
-              
-              <FadeInUpScroll delay={0.4} style={{ maxWidth: '800px', textAlign: 'center' }}>
-                <p style={{ fontSize: 'clamp(1rem, 2vw, 1.25rem)', color: '#d1d5db', lineHeight: 1.8 }}>
-                  Soy un desarrollador Full Stack apasionado por crear experiencias digitales innovadoras y centradas en el usuario. Me especializo en el desarrollo de aplicaciones web completas, desde la arquitectura del backend hasta la implementación de interfaces modernas, intuitivas y responsivas en el frontend.              
-                </p>
-              </FadeInUpScroll>
-            </div>
-          </FadeInUpScroll>
-          
-          <div className="container" style={{ maxWidth: '800px', margin: '0 auto', textAlign: 'center', marginTop: 'clamp(2rem, 8vw, 4rem)' }}>
-            <FadeInUpScroll delay={0.1}>
-              <p style={{ fontSize: 'clamp(1.125rem, 3vw, 1.5rem)', color: 'var(--color-text-muted)', lineHeight: 1.8, marginBottom: 'var(--spacing-10)' }}>
-                Trabajo con tecnologías como <strong style={{ color: 'var(--color-text-main)' }}>React, Next.js y Bootstrap</strong> para la construcción de interfaces dinámicas, y utilizo <strong style={{ color: 'var(--color-text-main)' }}>Node.js, Java, Python</strong> y bases de datos como MySQL o PostgreSQL para el desarrollo del lado del servidor. También tengo experiencia integrando APIs RESTful, sistemas de autenticación (incluyendo Firebase y JWT) y despliegue en plataformas cloud.
-              </p>
-            </FadeInUpScroll>
-            <FadeInUpScroll delay={0.4} style={{ marginTop: 'var(--spacing-12)', height: '200px', position: 'relative', overflow: 'hidden'}}>
-              <LogoLoop logos={techLogos} speed={40} direction="left" logoHeight={60} gap={60} hoverSpeed={0} scaleOnHover fadeOut fadeOutColor="#ffffff" ariaLabel="Technology partners" />
-              <LogoLoop logos={techLogos} speed={40} direction="right" logoHeight={60} gap={60} hoverSpeed={0} fadeOut fadeOutColor="#ffffff" />
-            </FadeInUpScroll>
-            <FadeInUpScroll delay={0.2}>
-              <p style={{ fontSize: 'clamp(1.125rem, 3vw, 1.5rem)', color: 'var(--color-text-muted)', lineHeight: 1.8, marginBottom: 'var(--spacing-10)' }}>
-                Me enfoco en escribir código limpio, escalable y mantenible, aplicando buenas prácticas como principios <strong style={{ color: 'var(--color-text-main)' }}>SOLID</strong>, control de versiones con Git y metodologías ágiles. Disfruto transformar ideas en soluciones funcionales que resuelvan problemas reales, optimizando tanto el rendimiento como la experiencia del usuario.
-              </p>
-            </FadeInUpScroll>
-          </div>
-        </section>
-
-        {/* Featured Projects Section */}
-        <section id="projects" className="container" style={{ paddingBottom: 'clamp(4rem, 15vw, 6rem)' }}>
-          <FadeInUpScroll style={{ textAlign: 'center', marginBottom: 'clamp(2rem, 8vw, 3rem)', marginTop: 'clamp(4rem, 15vw, 6rem)' }}>
-            <h2 style={{ fontSize: 'clamp(3rem, 10vw, 5rem)', fontWeight: 900, color: 'var(--color-text-main)', letterSpacing: '-0.04em', textTransform: 'uppercase' }}>Trabajos Destacados</h2>
-          <FadeInUpScroll delay={0.1}> 
-            <p style={{ paddingTop: 'var(--spacing-2)', textAlign: 'center', fontSize: '1.5rem', color: 'var(--color-text-muted)', lineHeight: 1.6, marginBottom: '2rem' }}>Una selección de mis proyectos recientes</p>
-          </FadeInUpScroll>
-          </FadeInUpScroll>
-          
-          <div className="projects-masonry">
-            
-            {/* Left Column */}
-            <div className="projects-left-col">
-              {leftProjects.length > 0 ? leftProjects.map((project, index) => (
-                <div key={project.id} className="project-card">
-                  <FadeInLeftScroll delay={index * 0.1}>
-                    <div className="project-image-wrapper">
-                      {project.image_url ? (
-                        <img src={project.image_url} alt={project.title} className="project-image" />
-                      ) : (
-                        <div style={{ width: '100%', aspectRatio: '2/3', backgroundColor: 'var(--color-border)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                          Sin Imagen
-                        </div>
-                      )}
-                      {/* Date Badge */}
-                      <div style={{ position: 'absolute', top: 0, right: 0, backgroundColor: '#e25e46', color: 'white', padding: '0.4rem 0.8rem', fontSize: '0.8rem', fontWeight: 900, textTransform: 'uppercase', letterSpacing: '0.05em' }}>
-                        {new Date(project.created_at).toLocaleDateString('es-ES', { month: 'long', day: 'numeric', year: 'numeric' })}
-                      </div>
-                    </div>
-                  </FadeInLeftScroll>
-                  <FadeInLeftScroll delay={index * 0.1 + 0.1}>
-                    <h3 style={{ fontSize: 'clamp(2rem, 5vw, 2.5rem)', fontWeight: 900, color: 'var(--color-text-main)', letterSpacing: '-0.04em', lineHeight: 1.1, marginBottom: '0.75rem' }}>{project.title}</h3>
-                  </FadeInLeftScroll>
-                  <FadeInLeftScroll delay={index * 0.1 + 0.2}>
-                    <p style={{ fontSize: '1.125rem', color: 'var(--color-text-muted)', lineHeight: 1.6, marginBottom: '1.5rem' }}>
-                      {project.description}
-                    </p>
-                  </FadeInLeftScroll>
-                  <FadeInLeftScroll delay={index * 0.1 + 0.3}>
-                    <div style={{ display: 'flex', gap: 'var(--spacing-4)' }}>
-                      {project.demo_url && <a href={project.demo_url} target="_blank" rel="noreferrer" style={{ fontSize: '1rem', fontWeight: 700, color: 'var(--color-text-main)', textDecoration: 'underline' }}>Ver Demo</a>}
-                    </div>
-                  </FadeInLeftScroll>
-                </div>
-              )) : (
-                <div style={{ color: 'var(--color-text-muted)' }}>No hay proyectos disponibles.</div>
-              )}
-            </div>
-
-            {/* Right Column (Staggered) */}
-            <div className="projects-right-col">
-              {rightProjects.length > 0 ? rightProjects.map((project, index) => (
-                <div key={project.id} className="project-card">
-                  <FadeInRightScroll delay={index * 0.1 + 0.2}>
-                    <div className="project-image-wrapper">
-                      {project.image_url ? (
-                        <img src={project.image_url} alt={project.title} className="project-image" />
-                      ) : (
-                        <div style={{ width: '100%', aspectRatio: '4/3', backgroundColor: 'var(--color-border)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                          Sin Imagen
-                        </div>
-                      )}
-                      {/* Date Badge */}
-                      <div style={{ position: 'absolute', top: 0, right: 0, backgroundColor: '#e25e46', color: 'white', padding: '0.4rem 0.8rem', fontSize: '0.8rem', fontWeight: 900, textTransform: 'uppercase', letterSpacing: '0.05em' }}>
-                        {new Date(project.created_at).toLocaleDateString('es-ES', { month: 'long', day: 'numeric', year: 'numeric' })}
-                      </div>
-                    </div>
-                  </FadeInRightScroll>
-                  <FadeInRightScroll delay={index * 0.1 + 0.3}>
-                    <h3 style={{ fontSize: 'clamp(2rem, 5vw, 2.5rem)', fontWeight: 900, color: 'var(--color-text-main)', letterSpacing: '-0.04em', lineHeight: 1.1, marginBottom: '0.75rem' }}>{project.title}</h3>
-                  </FadeInRightScroll>
-                  <FadeInRightScroll delay={index * 0.1 + 0.4}>
-                    <p style={{ fontSize: '1.125rem', color: 'var(--color-text-muted)', lineHeight: 1.6, marginBottom: '1.5rem' }}>
-                      {project.description}
-                    </p>
-                  </FadeInRightScroll>
-                  <FadeInRightScroll delay={index * 0.1 + 0.5}>
-                    <div style={{ display: 'flex', gap: 'var(--spacing-4)' }}>
-                      {project.demo_url && <a href={project.demo_url} target="_blank" rel="noreferrer" style={{ fontSize: '1rem', fontWeight: 700, color: 'var(--color-text-main)', textDecoration: 'underline' }}>Ver Demo</a>}
-                    </div>
-                  </FadeInRightScroll>
-                </div>
-              )) : null}
-            </div>
-
-          </div>
-        </section>
-
-        {/* Contact Section */}
-        <section id="contact" style={{ paddingBottom: 'clamp(4rem, 15vw, 6rem)', paddingTop: 'clamp(2rem, 8vw, 3rem)' }}>
-          <FadeInUpScroll>
-            <div className="container" style={{ 
-              backgroundColor: '#1a1a1a', 
-              borderRadius: 'var(--radius-lg)', 
-              padding: 'clamp(4rem, 15vw, 6rem) var(--spacing-6)',
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'center',
-              justifyContent: 'center',
-              minHeight: '400px',
-              marginBottom: 'clamp(2rem, 8vw, 3rem)'
-            }}>
-              <FadeInUpScroll delay={0.2} style={{ textAlign: 'center' }}>
-                <h2 style={{ fontSize: 'clamp(3rem, 8vw, 6rem)', fontWeight: 900, color: '#ffffff', letterSpacing: '-0.04em', textTransform: 'uppercase', lineHeight: 1 }}>Contacto</h2>
-                <p style={{ fontSize: 'clamp(1rem, 2vw, 1.25rem)', color: '#d1d5db', marginTop: '1rem' }}>¿Tienes un proyecto en mente? Hablemos.</p>
-              </FadeInUpScroll>
-            </div>
-          </FadeInUpScroll>
-
-          <div className="container" style={{ maxWidth: '600px', margin: '0 auto' }}>
-            <FadeInUpScroll delay={0.2}>
-              <form action={async (formData) => {
-                'use server';
-                const name = formData.get('name');
-                const email = formData.get('email');
-                const message = formData.get('message');
-                
-                if(name && email && message) {
-                  console.log('Nuevo mensaje de contacto local:', { name, email, message });
-                }
-              }} style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
-                <div className="input-group">
-                  <label htmlFor="name" style={{ fontWeight: 700, color: 'var(--color-text-main)' }}>Nombre</label>
-                  <input type="text" id="name" name="name" required className="form-input" placeholder="Tu nombre" style={{ padding: '1rem', fontSize: '1rem', backgroundColor: 'var(--color-surface-hover)', color: 'var(--color-text-main)', border: '1px solid var(--color-border)' }} />
-                </div>
-                <div className="input-group">
-                  <label htmlFor="email" style={{ fontWeight: 700, color: 'var(--color-text-main)' }}>Correo Electrónico</label>
-                  <input type="email" id="email" name="email" required className="form-input" placeholder="tu@correo.com" style={{ padding: '1rem', fontSize: '1rem', backgroundColor: 'var(--color-surface-hover)', color: 'var(--color-text-main)', border: '1px solid var(--color-border)' }} />
-                </div>
-                <div className="input-group">
-                  <label htmlFor="message" style={{ fontWeight: 700, color: 'var(--color-text-main)' }}>Mensaje</label>
-                  <textarea id="message" name="message" required className="form-input" rows="5" placeholder="Cuéntame sobre tu proyecto..." style={{ padding: '1rem', fontSize: '1rem', resize: 'vertical', backgroundColor: 'var(--color-surface-hover)', color: 'var(--color-text-main)', border: '1px solid var(--color-border)' }}></textarea>
-                </div>
-                <button type="submit" className="btn-31" style={{ width: '100%', marginTop: '1rem' }}>
-                  <span className="text-container">
-                    <span className="text">Enviar Mensaje</span>
-                  </span>
-                </button>
-              </form>
-            </FadeInUpScroll>
-          </div>
-        </section>
-
-        {/* FAQ Section */}
-        <section id="faq" className="container" style={{ paddingBottom: 'var(--spacing-12)', paddingTop: 'clamp(2rem, 8vw, 3rem)' }}>
-          <FadeInUpScroll style={{ textAlign: 'center', marginBottom: 'var(--spacing-6)' }}>
-            <h2 style={{ fontSize: 'clamp(2.5rem, 8vw, 4rem)', fontWeight: 900, color: 'var(--color-text-main)', letterSpacing: '-0.04em', textTransform: 'uppercase' }}>Preguntas Frecuentes</h2>
-          </FadeInUpScroll>
-          
-          <FAQAccordion 
-            faqs={[
-              { q: "¿Estás disponible para trabajo freelance?", a: "Sí, actualmente estoy aceptando nuevos proyectos freelance. Me enfoco en aplicaciones web y desarrollo full stack." },
-              { q: "¿Qué tecnologías sueles usar?", a: "Mi stack principal incluye React y Next.js para el frontend, con Node.js o Python en el backend. Para bases de datos suelo usar PostgreSQL y Firebase." },
-              { q: "¿Trabajas de forma remota?", a: "Absolutamente. Tengo experiencia trabajando con clientes y equipos distribuidos en todo el mundo, manteniendo una comunicación clara y constante." },
-              { q: "¿Cuánto tarda en desarrollarse un sitio web?", a: "El tiempo varía mucho dependiendo de la complejidad y los requerimientos. Una landing page puede tomar un par de semanas, mientras que una aplicación web completa puede llevar meses. Contáctame y hablamos de detalles." }
-            ]}
+        {/* Curved Loop Section */}
+        <section style={{ overflow: 'hidden', padding: '0.5rem 0', marginTop: '1rem', marginBottom: '10rem' }}>
+          <CurvedLoop 
+            marqueeText="UX/UI DESIGNER ✦ FULL STACK DEVELOPER ✦ "
+            speed={1}
+            curveAmount={0}
+            direction="left"
+            interactive={true}
           />
         </section>
+
+        <SobreMiSection
+          techLogosSlot={
+            <LogoLoop logos={techLogos} speed={40} direction="left" logoHeight={50} gap={50} hoverSpeed={0} scaleOnHover={true} fadeOut fadeOutColor="#000000" ariaLabel="Technology partners" />
+          }
+        />
+
+        {/* Projects + Contact — GSAP horizontal scroll with bg reveal */}
+        <ProyectosSection
+          projects={projects}
+          contactSlot={
+            <form action={async (formData) => {
+              'use server';
+              const name = formData.get('name');
+              const email = formData.get('email');
+              const message = formData.get('message');
+              if (name && email && message) {
+                console.log('Nuevo mensaje de contacto local:', { name, email, message });
+              }
+            }} style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+              <div className="input-group">
+                <label htmlFor="name" style={{ fontWeight: 700, color: 'var(--color-text-main)' }}>Nombre</label>
+                <input type="text" id="name" name="name" required className="form-input" placeholder="Tu nombre" style={{ padding: '0.85rem', fontSize: '0.95rem', backgroundColor: 'rgba(255,255,255,0.07)', color: '#fff', border: '1px solid rgba(255,255,255,0.15)' }} />
+              </div>
+              <div className="input-group">
+                <label htmlFor="email" style={{ fontWeight: 700, color: 'var(--color-text-main)' }}>Correo Electrónico</label>
+                <input type="email" id="email" name="email" required className="form-input" placeholder="tu@correo.com" style={{ padding: '0.85rem', fontSize: '0.95rem', backgroundColor: 'rgba(255,255,255,0.07)', color: '#fff', border: '1px solid rgba(255,255,255,0.15)' }} />
+              </div>
+              <div className="input-group">
+                <label htmlFor="message" style={{ fontWeight: 700, color: 'var(--color-text-main)' }}>Mensaje</label>
+                <textarea id="message" name="message" required className="form-input" rows="3" placeholder="Cuéntame sobre tu proyecto..." style={{ padding: '0.85rem', fontSize: '0.95rem', resize: 'vertical', backgroundColor: 'rgba(255,255,255,0.07)', color: '#fff', border: '1px solid rgba(255,255,255,0.15)' }}></textarea>
+              </div>
+              <button type="submit" className="btn-31" style={{ width: '100%', marginTop: '0.25rem' }}>
+                <span className="text-container"><span className="text">Enviar Mensaje</span></span>
+              </button>
+            </form>
+          }
+        />
+
+        {/* Pinned FAQ + Overlapping Footer */}
+        <PinnedFAQFooter
+          faqContent={
+            <section id="faq" className="container" style={{ paddingBottom: 'var(--spacing-12)', paddingTop: '2rem' }}>
+              <FadeInUpScroll style={{ textAlign: 'center', marginBottom: '2rem' }}>
+                <h2 style={{ fontSize: 'clamp(2rem, 6vw, 6rem)', fontWeight: 900, color: 'var(--color-text-main)', letterSpacing: '-0.04em', textTransform: 'uppercase', whiteSpace: 'nowrap' }}>Preguntas Frecuentes</h2>
+              </FadeInUpScroll>
+              <FAQAccordion
+                faqs={[
+                  { q: "¿Estás disponible para trabajo freelance?", a: "Sí, actualmente estoy aceptando nuevos proyectos freelance. Me enfoco en aplicaciones web y desarrollo full stack." },
+                  { q: "¿Qué tecnologías sueles usar?", a: "Mi stack principal incluye React y Next.js para el frontend, con Node.js o Python en el backend. Para bases de datos suelo usar PostgreSQL y Firebase." },
+                  { q: "¿Trabajas de forma remota?", a: "Absolutamente. Tengo experiencia trabajando con clientes y equipos distribuidos en todo el mundo, manteniendo una comunicación clara y constante." },
+                  { q: "¿Cuánto tarda en desarrollarse un sitio web?", a: "El tiempo varía mucho dependiendo de la complejidad y los requerimientos. Una landing page puede tomar un par de semanas, mientras que una aplicación web completa puede llevar meses. Contáctame y hablamos de detalles." }
+                ]}
+              />
+            </section>
+          }
+          footerContent={
+            <footer className="dark-footer" style={{ overflow: 'hidden', backgroundColor: 'transparent', position: 'relative', borderTop: '1px solid #ffffff' }}>
+              <style dangerouslySetInnerHTML={{__html: `
+                .footer-hover-link {
+                  display: inline-block;
+                  overflow: hidden;
+                  vertical-align: top;
+                  font-size: 2rem;
+                  font-weight: 900;
+                  text-transform: uppercase;
+                  color: #fff;
+                  text-decoration: none;
+                  line-height: 1;
+                }
+                .footer-hover-link span {
+                  display: inline-block;
+                  position: relative;
+                  transition: transform 0.4s cubic-bezier(0.76, 0, 0.24, 1);
+                }
+                .footer-hover-link span::after {
+                  content: attr(data-text);
+                  position: absolute;
+                  top: 100%;
+                  left: 0;
+                  color: rgba(255,255,255,0.6);
+                }
+                .footer-hover-link:hover span {
+                  transform: translateY(-100%);
+                }
+                .footer-social-btn {
+                  border: 1px solid rgba(255,255,255,0.2);
+                  border-radius: 50px;
+                  width: 45px;
+                  height: 45px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  transition: all 0.4s ease;
+                  cursor: pointer;
+                  position: relative;
+                  overflow: hidden;
+                  background: transparent;
+                  text-decoration: none;
+                }
+                .footer-social-btn:hover {
+                  width: 120px;
+                  background: rgba(255,255,255,0.08);
+                  border-color: rgba(255,255,255,0.4);
+                }
+                .footer-social-btn .text {
+                  position: absolute;
+                  color: #fff;
+                  font-weight: 600;
+                  font-size: 0.8rem;
+                  opacity: 0;
+                  transition: opacity 0.4s ease;
+                  text-transform: uppercase;
+                  letter-spacing: 0.05em;
+                }
+                .footer-social-btn:hover .text {
+                  opacity: 1;
+                }
+                .footer-social-btn .svgIcon {
+                  transition: opacity 0.3s ease;
+                  width: 18px;
+                  height: 18px;
+                  fill: #fff;
+                }
+                .footer-social-btn:hover .svgIcon {
+                  opacity: 0;
+                }
+              `}} />
+              <div className="container" style={{ padding: '2rem 0', display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', gap: '2rem' }}>
+                
+                {/* Left Column */}
+                <div style={{ flex: '1 1 300px' }}>
+                   <FadeInUpScroll delay={0.1}>
+                      <h3 style={{ fontSize: 'clamp(2rem, 6vw, 4rem)', fontWeight: 900, lineHeight: 1.1, textTransform: 'uppercase', color: '#fff', margin: 0 }}>
+                       Start something<br/>
+                       <span style={{ color: 'var(--color-text-muted)' }}>Great together</span>
+                     </h3>
+                   </FadeInUpScroll>
+                </div>
+      
+                {/* Right Column */}
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem', alignItems: 'flex-start', flex: '1 1 250px' }}>
+                   {/* Navigation List */}
+                   <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+                     {['Inicio', 'Sobre Mí', 'Proyectos', 'Contacto'].map((item, i) => (
+                       <li key={i}>
+                         <FadeInUpScroll delay={0.2 + (i * 0.1)}>
+                           <a href={i === 0 ? '#' : `#${['about', 'projects', 'contact'][i-1]}`} className="footer-hover-link">
+                             <span data-text={item}>{item}</span>
+                           </a>
+                         </FadeInUpScroll>
+                       </li>
+                     ))}
+                   </ul>
+      
+                   {/* Follow */}
+                   <FadeInUpScroll delay={0.6}>
+                     <div>
+                       <p style={{ color: 'var(--color-text-muted)', marginBottom: '0.5rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '0.85rem' }}>Follow</p>
+                       <div className="button-container" style={{ display: 'flex', gap: '0.5rem' }}>
+                         <a href="#" className="footer-social-btn">
+                           <svg className="svgIcon" viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
+                             <path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z" />
+                           </svg>
+                           <span className="text">LinkedIn</span>
+                         </a>
+                         <a href="#" className="footer-social-btn">
+                           <svg className="svgIcon" viewBox="0 0 496 512" xmlns="http://www.w3.org/2000/svg">
+                             <path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z" />
+                           </svg>
+                           <span className="text">GitHub</span>
+                         </a>
+                         <a href="#" className="footer-social-btn">
+                           <svg className="svgIcon" viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
+                             <path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z" />
+                           </svg>
+                           <span className="text">Instagram</span>
+                         </a>
+                       </div>
+                     </div>
+                   </FadeInUpScroll>
+                </div>
+              </div>
+      
+              {/* Big Name */}
+              <div style={{ width: '100%', textAlign: 'center', opacity: 0.1, pointerEvents: 'none', userSelect: 'none', marginTop: '6rem' }}>
+                 <h1 style={{ fontSize: 'clamp(2rem, 10vw, 12rem)', fontWeight: 900, color: '#fff', whiteSpace: 'nowrap', margin: 0, lineHeight: 1, textTransform: 'uppercase' }}>
+                   J
+                   <span style={{ WebkitMaskImage: 'linear-gradient(to bottom, black, transparent)' }}>O</span>
+                   S
+                   <span style={{ WebkitMaskImage: 'linear-gradient(to bottom, black, transparent)' }}>U</span>
+                   <span style={{ WebkitMaskImage: 'linear-gradient(to bottom, black, transparent)' }}>É</span>
+                   {' '}M
+                   <span style={{ WebkitMaskImage: 'linear-gradient(to bottom, black, transparent)' }}>E</span>
+                   J
+                   <span style={{ WebkitMaskImage: 'linear-gradient(to bottom, black, transparent)' }}>Í</span>
+                   A
+                 </h1>
+              </div>
+            </footer>
+          }
+        />
       </main>
-
-      <footer className="dark-footer">
-        <div className="container" style={{ position: 'relative', zIndex: 10, marginBottom: '2rem', display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', gap: '3rem' }}>
-          
-          {/* Left Column: Logo & Copyright */}
-          <FadeInUpScroll delay={0.1} className="footer-brand-col" style={{ display: 'flex', flexDirection: 'column', gap: '1rem', flex: '1 1 300px', alignItems: 'center', textAlign: 'center' }}>
-            <FadeInDown delay={0.1} className="boldonse-regular logo-text" style={{ fontSize: 'clamp(3rem, 10vw, 5rem)', lineHeight: 1 }}>
-              <a href="#" style={{ textDecoration: 'none', color: 'inherit', cursor: 'pointer' }}>
-                Josué Mejía
-              </a>
-            </FadeInDown>
-            
-          </FadeInUpScroll>
-
-          {/* Right Columns Wrapper */}
-          <div className="footer-nav-wrapper">
-            
-            {/* Column 2: Pages */}
-            <FadeInUpScroll delay={0.2} style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '2rem 1rem', flex: 1, justifyItems: 'center', alignItems: 'center', width: '100%', maxWidth: '500px' }}>
-              <a href="#" className="footer-link-huge">Inicio</a>
-              <a href="#about" className="footer-link-huge">Sobre Mí</a>
-              <a href="#projects" className="footer-link-huge">Proyectos</a>
-              <a href="#contact" className="footer-link-huge">Contacto</a>
-            </FadeInUpScroll>
-          </div>
-        </div>
-
-        <FadeInUpScroll delay={0.5} className="container footer-bottom">
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem' }}>
-            <p>Copyright &copy; 2026 DEVDN | Desarrollado con pasión</p>
-            
-            {/* From Uiverse.io by McHaXYT */}
-            <div className="button-container">
-              <button className="button flex-center">
-                <svg viewBox="0 0 24 24" className="btn-svg" width="22px" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <g strokeWidth="0"></g>
-                  <g strokeLinecap="round" strokeLinejoin="round"></g>
-                  <g>
-                    <path fillRule="evenodd" clipRule="evenodd" d="M12 18C15.3137 18 18 15.3137 18 12C18 8.68629 15.3137 6 12 6C8.68629 6 6 8.68629 6 12C6 15.3137 8.68629 18 12 18ZM12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16Z" fill="#fff"></path>
-                    <path d="M18 5C17.4477 5 17 5.44772 17 6C17 6.55228 17.4477 7 18 7C18.5523 7 19 6.55228 19 6C19 5.44772 18.5523 5 18 5Z" fill="#fff"></path>
-                    <path fillRule="evenodd" clipRule="evenodd" d="M1.65396 4.27606C1 5.55953 1 7.23969 1 10.6V13.4C1 16.7603 1 18.4405 1.65396 19.7239C2.2292 20.8529 3.14708 21.7708 4.27606 22.346C5.55953 23 7.23969 23 10.6 23H13.4C16.7603 23 18.4405 23 19.7239 22.346C20.8529 21.7708 21.7708 20.8529 22.346 19.7239C23 18.4405 23 16.7603 23 13.4V10.6C23 7.23969 23 5.55953 22.346 4.27606C21.7708 3.14708 20.8529 2.2292 19.7239 1.65396C18.4405 1 16.7603 1 13.4 1H10.6C7.23969 1 5.55953 1 4.27606 1.65396C3.14708 2.2292 2.2292 3.14708 1.65396 4.27606ZM13.4 3H10.6C8.88684 3 7.72225 3.00156 6.82208 3.0751C5.94524 3.14674 5.49684 3.27659 5.18404 3.43597C4.43139 3.81947 3.81947 4.43139 3.43597 5.18404C3.27659 5.49684 3.14674 5.94524 3.0751 6.82208C3.00156 7.72225 3 8.88684 3 10.6V13.4C3 15.1132 3.00156 16.2777 3.0751 17.1779C3.14674 18.0548 3.27659 18.5032 3.43597 18.816C3.81947 19.5686 4.43139 20.1805 5.18404 20.564C5.49684 20.7234 5.94524 20.8533 6.82208 20.9249C7.72225 20.9984 8.88684 21 10.6 21H13.4C15.1132 21 16.2777 20.9984 17.1779 20.9249C18.0548 20.8533 18.5032 20.7234 18.816 20.564C19.5686 20.1805 20.1805 19.5686 20.564 18.816C20.7234 18.5032 20.8533 18.0548 20.9249 17.1779C20.9984 16.2777 21 15.1132 21 13.4V10.6C21 8.88684 20.9984 7.72225 20.9249 6.82208C20.8533 5.94524 20.7234 5.49684 20.564 5.18404C20.1805 4.43139 19.5686 3.81947 18.816 3.43597C18.5032 3.27659 18.0548 3.14674 17.1779 3.0751C16.2777 3.00156 15.1132 3 13.4 3Z" fill="#fff"></path>
-                  </g>
-                </svg>
-              </button>
-              <button className="button flex-center">
-                <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" className="btn-svg" width="22px" viewBox="0 -2 20 20">
-                  <g strokeWidth="0"></g>
-                  <g strokeLinejoin="round" strokeLinecap="round"></g>
-                  <g>
-                    <g fillRule="evenodd" fill="none" strokeWidth="1">
-                      <g fill="#fff" transform="translate(-60.000000, -7521.000000)">
-                        <g transform="translate(56.000000, 160.000000)">
-                          <path d="M10.29,7377 C17.837,7377 21.965,7370.84365 21.965,7365.50546 C21.965,7365.33021 21.965,7365.15595 21.953,7364.98267 C22.756,7364.41163 23.449,7363.70276 24,7362.8915 C23.252,7363.21837 22.457,7363.433 21.644,7363.52751 C22.5,7363.02244 23.141,7362.2289 23.448,7361.2926 C22.642,7361.76321 21.761,7362.095 20.842,7362.27321 C19.288,7360.64674 16.689,7360.56798 15.036,7362.09796 C13.971,7363.08447 13.518,7364.55538 13.849,7365.95835 C10.55,7365.79492 7.476,7364.261 5.392,7361.73762 C4.303,7363.58363 4.86,7365.94457 6.663,7367.12996 C6.01,7367.11125 5.371,7366.93797 4.8,7366.62489 L4.8,7366.67608 C4.801,7368.5989 6.178,7370.2549 8.092,7370.63591 C7.488,7370.79836 6.854,7370.82199 6.24,7370.70483 C6.777,7372.35099 8.318,7373.47829 10.073,7373.51078 C8.62,7374.63513 6.825,7375.24554 4.977,7375.24358 C4.651,7375.24259 4.325,7375.22388 4,7375.18549 C5.877,7376.37088 8.06,7377 10.29,7376.99705"></path>
-                        </g>
-                      </g>
-                    </g>
-                  </g>
-                </svg>
-              </button>
-              <button className="button flex-center">
-                <svg viewBox="0 0 20 20" width="22px" className="btn-svg" xmlns="http://www.w3.org/2000/svg" fill="#fff" stroke="#fff">
-                  <g strokeWidth="0"></g>
-                  <g strokeLinecap="round" strokeLinejoin="round"></g>
-                  <g>
-                    <g strokeWidth="1" fill="none" fillRule="evenodd">
-                      <g transform="translate(-140.000000, -7559.000000)" fill="#fff">
-                        <g transform="translate(56.000000, 160.000000)">
-                          <path d="M94,7399 C99.523,7399 104,7403.59 104,7409.253 C104,7413.782 101.138,7417.624 97.167,7418.981 C96.66,7419.082 96.48,7418.762 96.48,7418.489 C96.48,7418.151 96.492,7417.047 96.492,7415.675 C96.492,7414.719 96.172,7414.095 95.813,7413.777 C98.04,7413.523 100.38,7412.656 100.38,7408.718 C100.38,7407.598 99.992,7406.684 99.35,7405.966 C99.454,7405.707 99.797,7404.664 99.252,7403.252 C99.252,7403.252 98.414,7402.977 96.505,7404.303 C95.706,7404.076 94.85,7403.962 94,7403.958 C93.15,7403.962 92.295,7404.076 91.497,7404.303 C89.586,7402.977 88.746,7403.252 88.746,7403.252 C88.203,7404.664 88.546,7405.707 88.649,7405.966 C88.01,7406.684 87.619,7407.598 87.619,7408.718 C87.619,7412.646 89.954,7413.526 92.175,7413.785 C91.889,7414.041 91.63,7414.493 91.54,7415.156 C90.97,7415.418 89.522,7415.871 88.63,7414.304 C88.63,7414.304 88.101,7413.319 87.097,7413.247 C87.097,7413.247 86.122,7413.234 87.029,7413.87 C87.029,7413.87 87.684,7414.185 88.139,7415.37 C88.139,7415.37 88.726,7417.2 91.508,7416.58 C91.513,7417.437 91.522,7418.245 91.522,7418.489 C91.522,7418.76 91.338,7419.077 90.839,7418.982 C86.865,7417.627 84,7413.783 84,7409.253 C84,7403.59 88.478,7399 94,7399"></path>
-                        </g>
-                      </g>
-                    </g>
-                  </g>
-                </svg>
-              </button>
-              
-            </div>
-          </div>
-        </FadeInUpScroll>
-        
-        {/* Background removed */}
-      </footer>
     </>
   );
 }
-

@@ -65,7 +65,16 @@ body {
 }
 
 html {
-  scroll-behavior: smooth;
+}
+
+/* Lenis smooth scroll overrides — required for GSAP ScrollTrigger integration */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
 }
 
 body {
@@ -312,7 +321,7 @@ textarea {
 }
 
 .animate-fade-up {
-  animation: fadeInUp 0.8s ease-out forwards;
+  animation: fadeInUp 1.5s ease-out forwards;
 }
 
 .header-action-btn {
