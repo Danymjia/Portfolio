@@ -4,6 +4,7 @@ import { useRef, useEffect } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { FadeInUpScroll, FadeInLeftScroll, FadeInRightScroll } from './HeroAnimations';
+import Cubes from './Cubes';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -103,14 +104,13 @@ export default function SobreMiSection({ techLogosSlot, buttonsSlot }) {
                 marginTop: '15vh', 
               }}
             >
-              Soy un desarrollador{' '}
-              <span style={{ color: '#ffffff', fontWeight: 700 }}>Full Stack</span>{' '}
-              apasionado por crear experiencias digitales innovadoras y centradas en el
-              usuario. Me especializo en el desarrollo de aplicaciones web completas, desde
-              la arquitectura del{' '}
-              <span style={{ color: '#ffffff', fontWeight: 700 }}>backend</span> hasta la
-              implementación de interfaces modernas, intuitivas y responsivas en el{' '}
-              <span style={{ color: '#ffffff', fontWeight: 700 }}>frontend</span>.
+              Soy un diseñador y desarrollador{' '}
+              <span style={{ color: '#ffffff', fontWeight: 700 }}>Frontend</span>{' '}
+              con sólida experiencia en{' '}
+              <span style={{ color: '#ffffff', fontWeight: 700 }}>Backend</span>{' '}
+              y arquitectura de sistemas web. He desarrollado aplicaciones móviles destacando el uso de{' '}
+              <span style={{ color: '#ffffff', fontWeight: 700 }}>Flutter</span>{' '}
+              y mi pasión se centra en el diseño, codificación y despliegue de landing pages, sitios web y e-commerce.
             </p>
           </FadeInLeftScroll>
         </div>
@@ -132,15 +132,30 @@ export default function SobreMiSection({ techLogosSlot, buttonsSlot }) {
           {/* Text and Buttons Row */}
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', flexWrap: 'wrap-reverse', gap: '2rem' }}>
             
-            {/* Buttons (Left side) */}
-            <div style={{ flex: 1, display: 'flex', gap: '1rem', flexWrap: 'wrap', justifyContent: 'center', marginTop: 'auto' }}>
-              <a href="/CV - Josue Mejia.pdf" download="CV - Josue Mejia.pdf" style={{ textDecoration: 'none' }}>
-                <button className="btn-31" style={{ padding: '0.75rem 1.5rem', fontSize: '0.85rem' }}>
-                  <span className="text-container">
-                    <span className="text">Descargar CV</span>
-                  </span>
-                </button>
-              </a>
+            {/* Interactive Cubes & Buttons (Left side) */}
+            <div style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '4rem', marginTop: 'auto' }}>
+              <div style={{ height: '450px', width: '100%', position: 'relative', display: 'flex', justifyContent: 'center', alignItems: 'center', transform: 'translate(-40px, -60px)' }}>
+                <Cubes 
+                  gridSize={6}
+                  cubeSize={60}
+                  maxAngle={45}
+                  radius={3}
+                  borderStyle="2px dotted rgba(233, 233, 233, 0.4)"
+                  faceColor="transparent"
+                  rippleColor="#abababff"
+                  rippleSpeed={1.5}
+                  autoAnimate
+                  rippleOnClick
+                />
+              </div>
+              <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', justifyContent: 'center' }}>
+                <a href="/CV - Josue Mejia.pdf" download="CV - Josue Mejia.pdf" style={{ textDecoration: 'none' }}>
+                  <button className="btn-31" style={{ padding: '0.75rem 1.5rem', fontSize: '0.85rem' }}>
+                    <span className="text-container">
+                      <span className="text">Descargar CV</span>
+                    </span>
+                  </button>
+                </a>
               <a href="#contact" style={{ textDecoration: 'none' }}>
                 <button className="btn-31" style={{ padding: '0.75rem 1.5rem', fontSize: '0.85rem' }}>
                   <span className="text-container">
@@ -149,6 +164,7 @@ export default function SobreMiSection({ techLogosSlot, buttonsSlot }) {
                 </button>
               </a>
             </div>
+          </div>
 
             <FadeInRightScroll delay={0.3}>
               <p
@@ -163,17 +179,13 @@ export default function SobreMiSection({ techLogosSlot, buttonsSlot }) {
                   margin: 0, 
                 }}
               >
-                Trabajo con tecnologías como{' '}
-                <strong style={{ color: '#ffffff' }}>React, Next.js y Bootstrap</strong> para
-                la construcción de interfaces dinámicas, y utilizo{' '}
-                <strong style={{ color: '#ffffff' }}>Node.js, Java, Python</strong> y bases de
-                datos como{' '}
-                <strong style={{ color: '#ffffff' }}>MySQL o PostgreSQL</strong> para el
-                desarrollo del lado del servidor. También tengo experiencia integrando{' '}
-                <strong style={{ color: '#ffffff' }}>APIs RESTful</strong>, sistemas de
-                autenticación (incluyendo{' '}
-                <strong style={{ color: '#ffffff' }}>Firebase y JWT</strong>) y despliegue en
-                plataformas cloud.
+                Mi enfoque tecnológico principal se basa en{' '}
+                <strong style={{ color: '#ffffff' }}>React, Next.js y JavaScript</strong>{' '}
+                acompañados de <strong style={{ color: '#ffffff' }}>Supabase</strong>{' '}
+                para crear soluciones integrales. Además, cuento con bases sólidas en{' '}
+                <strong style={{ color: '#ffffff' }}>Python y Java</strong>{' '}
+                y experiencia trabajando con bases de datos como{' '}
+                <strong style={{ color: '#ffffff' }}>MongoDB, MySQL, SQL Server y PostgreSQL</strong>. También poseo conocimientos prácticos en redes y soporte a usuarios.
               </p>
             </FadeInRightScroll>
           </div>

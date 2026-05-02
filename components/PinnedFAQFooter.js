@@ -2,7 +2,14 @@
 
 export default function PinnedFAQFooter({ faqContent, footerContent }) {
   return (
-    <div style={{ position: 'relative', backgroundColor: '#0a0a0a' }}>
+    <div
+      style={{
+        position: 'relative',
+        zIndex: 2,
+        backgroundColor: 'transparent',
+        marginTop: 'clamp(-8rem, -14vw, -3.5rem)',
+      }}
+    >
       {/* FAQ goes in the background layer, using sticky to stay on screen */}
       <div 
         style={{ 
